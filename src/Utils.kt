@@ -15,9 +15,9 @@ fun String.md5() = BigInteger(1, MessageDigest.getInstance("MD5").digest(toByteA
     .toString(16)
     .padStart(32, '0')
 
-fun String.toNumberList() : List<Int> {
+fun String.toNumberList() : List<Long> {
     val numberRegEx = "(\\d+)".toRegex()
-    return numberRegEx.findAll(this).map{match -> match.value.toInt()}.toList()
+    return numberRegEx.findAll(this).map{match -> match.value.toLong()}.toList()
 }
 
 /**
